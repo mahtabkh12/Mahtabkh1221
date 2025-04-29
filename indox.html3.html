@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Package - Mahtab Alyani Trade Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-gem"></i> Premium Packages</h1>
+            <p>Choose your investment plan and start earning today</p>
+        </div>
+        
+        <!-- Silver Package (335 PKR) -->
+        <div class="package">
+            <h2 class="package-title"><i class="fas fa-star"></i> Silver Package</h2>
+            <div class="package-detail">
+                <span><i class="fas fa-tag"></i> Price:</span>
+                <span>PKR 335</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-coins"></i> Daily Profit:</span>
+                <span>PKR 30</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-wallet"></i> Total Profit:</span>
+                <span>PKR 600</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="far fa-calendar-alt"></i> Plan Validity:</span>
+                <span>20 days</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-users"></i> Referral Bonus:</span>
+                <span>13%, 3%, 2%</span>
+            </div>
+            <button class="buy-btn" onclick="buyPackage(335, 'Silver Package')">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </button>
+        </div>
+        
+        <!-- Gold Package (840 PKR) -->
+        <div class="package">
+            <h2 class="package-title"><i class="fas fa-crown"></i> Gold Package</h2>
+            <div class="package-detail">
+                <span><i class="fas fa-tag"></i> Price:</span>
+                <span>PKR 840</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-coins"></i> Daily Profit:</span>
+                <span>PKR 67.5</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-wallet"></i> Total Profit:</span>
+                <span>PKR 1,350</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="far fa-calendar-alt"></i> Plan Validity:</span>
+                <span>20 days</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-users"></i> Referral Bonus:</span>
+                <span>12%, 3%, 2%</span>
+            </div>
+            <button class="buy-btn" onclick="buyPackage(840, 'Gold Package')">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </button>
+        </div>
+        
+        <!-- Diamond Package (1950 PKR) -->
+        <div class="package">
+            <h2 class="package-title"><i class="fas fa-gem"></i> Diamond Package</h2>
+            <div class="package-detail">
+                <span><i class="fas fa-tag"></i> Price:</span>
+                <span>PKR 1,950</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-coins"></i> Daily Profit:</span>
+                <span>PKR 155</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-wallet"></i> Total Profit:</span>
+                <span>PKR 3,100</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="far fa-calendar-alt"></i> Plan Validity:</span>
+                <span>20 days</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-users"></i> Referral Bonus:</span>
+                <span>13%, 3%, 2%</span>
+            </div>
+            <button class="buy-btn" onclick="buyPackage(1950, 'Diamond Package')">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </button>
+        </div>
+
+        <!-- Platinum Package (2500 PKR) -->
+        <div class="package">
+            <h2 class="package-title"><i class="fas fa-gem"></i> Platinum Package</h2>
+            <div class="package-detail">
+                <span><i class="fas fa-tag"></i> Price:</span>
+                <span>PKR 2,500</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-coins"></i> Daily Profit:</span>
+                <span>PKR 200</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-wallet"></i> Total Profit:</span>
+                <span>PKR 4,000</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="far fa-calendar-alt"></i> Plan Validity:</span>
+                <span>20 days</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-users"></i> Referral Bonus:</span>
+                <span>15%, 5%, 3%</span>
+            </div>
+            <button class="buy-btn" onclick="buyPackage(2500, 'Platinum Package')">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </button>
+        </div>
+
+        <!-- Titanium Package (3000 PKR) -->
+        <div class="package">
+            <h2 class="package-title"><i class="fas fa-gem"></i> Titanium Package</h2>
+            <div class="package-detail">
+                <span><i class="fas fa-tag"></i> Price:</span>
+                <span>PKR 3,000</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-coins"></i> Daily Profit:</span>
+                <span>PKR 250</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-wallet"></i> Total Profit:</span>
+                <span>PKR 5,000</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="far fa-calendar-alt"></i> Plan Validity:</span>
+                <span>20 days</span>
+            </div>
+            <div class="package-detail">
+                <span><i class="fas fa-users"></i> Referral Bonus:</span>
+                <span>15%, 5%, 3%</span>
+            </div>
+            <button class="buy-btn" onclick="buyPackage(3000, 'Titanium Package')">
+                <i class="fas fa-shopping-cart"></i> Buy Now
+            </button>
+        </div>
+    </div>
+    
+    <!-- Navigation with smaller buttons -->
+    <div class="navigation">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="buy.html" class="nav-item active-nav">
+            <i class="fas fa-shopping-bag"></i>
+            Buy
+        </a>
+        <a href="withdraw.html" class="nav-item">
+            <i class="fas fa-money-bill-wave"></i>
+            Withdraw
+        </a>
+        <a href="invite.html" class="nav-item">
+            <i class="fas fa-user-friends"></i>
+            Invite
+        </a>
+        <a href="account.html" class="nav-item">
+            <i class="fas fa-user-circle"></i>
+            Account
+        </a>
+    </div>
+</body>
+</html>

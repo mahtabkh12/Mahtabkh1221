@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahtab Alyani - JazzCash Deposit</title>
+</head>
+<body>
+    <div class="header" id="time">4:15 PM</div>
+    
+    <div class="app-title">Mahtab Alyani</div>
+    
+    <div class="divider"></div>
+    
+    <div class="deposit-card">
+        <div class="method-title">JazzCash Deposit</div>
+        <div class="method-details">
+            <div class="detail-row">
+                <div class="detail-label">Account Name:</div>
+                <div>NOREEN BiBi</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Account Number:</div>
+                <div>03262545857</div>
+                <button class="copy-btn" onclick="copyToClipboard('03262545857')">Copy</button>
+            </div>
+        </div>
+        <div class="note">
+            Send your payment to this JazzCash account and submit your transaction details below.
+        </div>
+    </div>
+
+    <div class="deposit-card">
+        <div class="method-title">Submit Payment Proof</div>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label class="form-label">Your Name:</label>
+                <input type="text" class="form-input" id="senderName" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Your Number:</label>
+                <input type="text" class="form-input" id="senderNumber" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Amount Sent (PKR):</label>
+                <input type="number" class="form-input" id="amount" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Transaction ID:</label>
+                <input type="text" class="form-input" id="trxId" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Screenshot (optional):</label>
+                <input type="file" class="form-input" id="screenshot">
+            </div>
+            <button type="submit" class="submit-btn">Submit Payment</button>
+        </form>
+        
+        <!-- This message will only show after submission -->
+        <div id="pendingMessage" class="status-message pending-status">
+            <div class="status-icon">⏳</div>
+            <div class="status-text">YOUR DEPOSIT IS PENDING</div>
+            <div class="status-note">We will verify and update your balance within 24 hours</div>
+        </div>
+    </div>
+</body>
+</html>

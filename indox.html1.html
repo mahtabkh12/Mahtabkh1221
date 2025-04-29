@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup - Mahtab Alyani</title>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="logo">Mahtab Alyani</div>
+        
+        <!-- Login Form -->
+        <form id="loginForm">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="text" id="loginEmail" placeholder="Email" required>
+                <div class="error-message" id="login-email-error"></div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <div class="error-message" id="login-password-error"></div>
+            </div>
+            <button type="submit" class="auth-btn">LOGIN</button>
+            <div class="switch-link">
+                Don't have an account? <a id="showSignup">Sign up</a>
+            </div>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="hidden">
+            <h2>Create Account</h2>
+            <div class="input-group">
+                <input type="text" id="fullname" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <div class="error-message" id="signup-email-error"></div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="signupPassword" placeholder="Password" required>
+            </div>
+            <button type="submit" class="auth-btn">SIGN UP</button>
+            <div class="success-message hidden" id="signup-success"></div>
+            <div class="switch-link">
+                Already have an account? <a id="showLogin">Login</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

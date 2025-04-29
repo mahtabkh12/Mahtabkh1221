@@ -1,0 +1,116 @@
+
+    <script>
+        // User database
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        
+        // Add test user if empty
+        if(users.length === 0) {
+            users.push({
+                fullname: "Mahtab Alyani",
+                email: "mahtab@example.com",
+                password: "Password123"
+            });
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // DOM elements
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const showSignup = document.getElementById('showSignup');
+        const showLogin = document.getElementById('showLogin');
+        const signupSuccess = document.getElementById('signup-success');
+
+        // Toggle between forms
+        showSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.classList.add('hidden');
+            signupForm.classList.remove('hidden');
+            resetErrors();
+        });
+
+        showLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+            resetErrors();
+        });
+
+        // Reset all error messages
+        function resetErrors() {
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+        }
+
+        // Check if email exists
+        function isEmailExists(email) {
+            return users.some(user => user.email.toLowerCase() === email.toLowerCase());
+        }
+
+        // Signup form submission
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            resetErrors();
+            
+            const email = document.getElementById('signupEmail').value.trim();
+            
+            if(isEmailExists(email)) {
+                document.getElementById('signup-email-error').textContent = 'This email is already registered';
+                document.getElementById('signup-email-error').style.display = 'block';
+                return;
+            }
+            
+            // Get form values
+            const fullname = document.getElementById('fullname').value.trim();
+            const password = document.getElementById('signupPassword').value;
+            
+            // Create new user
+            const newUser = {
+                fullname,
+                email,
+                password
+            };
+
+            // Add to database
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+            
+            // Show success
+            signupSuccess.textContent = 'Account created successfully!';
+            signupSuccess.classList.remove('hidden');
+            
+            // Reset form after 2 seconds
+            setTimeout(() => {
+                signupForm.reset();
+                signupForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                signupSuccess.classList.add('hidden');
+            }, 2000);
+        });
+
+        // Login form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            resetErrors();
+            
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            
+            // Find user
+            const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+            
+            if(!user) {
+                document.getElementById('login-email-error').textContent = 'Email not found';
+                document.getElementById('login-email-error').style.display = 'block';
+                return;
+            }
+            
+            if(user.password !== password) {
+                document.getElementById('login-password-error').textContent = 'Incorrect password';
+                document.getElementById('login-password-error').style.display = 'block';
+                return;
+            }
+            
+            alert(`Welcome back, ${user.fullname}!`);
+        });
+    </script>

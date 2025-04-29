@@ -1,0 +1,62 @@
+ <script>
+        // Current time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleTimeString([], { 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+        
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert("Number copied to clipboard: " + text);
+            }, function() {
+                prompt("Copy this number:", text);
+            });
+        }
+        
+        // Form submission
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const senderName = document.getElementById('senderName').value;
+            const senderNumber = document.getElementById('senderNumber').value;
+            const amount = document.getElementById('amount').value;
+            const trxId = document.getElementById('trxId').value;
+            
+            // Validate form
+            if (!senderName || !senderNumber || !amount || !trxId) {
+                alert("Please fill all required fields");
+                return;
+            }
+            
+            // Show pending message
+            document.getElementById('pendingMessage').style.display = 'block';
+            
+            // Reset form
+            document.getElementById('paymentForm').reset();
+            
+            // Scroll to show the message
+            document.getElementById('pendingMessage').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // In a real app, you would send this data to your backend:
+            /*
+            const formData = {
+                senderName: senderName,
+                senderNumber: senderNumber,
+                amount: amount,
+                trxId: trxId,
+                status: 'pending',
+                timestamp: new Date().toISOString()
+            };
+            console.log("Payment details submitted:", formData);
+            */
+        });
+    </script>

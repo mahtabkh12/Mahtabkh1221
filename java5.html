@@ -1,0 +1,19 @@
+<script>
+        // Timer Countdown (1 Minute)
+        let timeLeft = 60;
+        const timer = document.getElementById('countdown');
+        const proceedBtn = document.getElementById('proceedBtn');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timer.textContent = "00:00";
+                proceedBtn.style.opacity = "1"; // Show button after ad ends
+            }
+        }, 1000);
+    </script>
